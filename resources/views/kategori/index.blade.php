@@ -29,8 +29,7 @@
                         <div class="d-flex gap-2">
                             <a href="{{ route('kategori.edit', $item->id) }}" class="btn btn-sm"
                                 style="background-color:#e3f2fd; color:#1565c0; font-size:12px;">Edit</a>
-                            <form action="{{ route('kategori.destroy', $item->id) }}" method="POST"
-                                onsubmit="return confirm('Hapus kategori ini?')">
+                            <form action="{{ route('kategori.destroy', $item->id) }}" method="POST" class="form-hapus">
                                 @csrf
                                 @method('DELETE')
                                 <button type="submit" class="btn btn-sm"

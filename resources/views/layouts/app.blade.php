@@ -110,5 +110,29 @@
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+        // Konfirmasi hapus tampil di tengah layar (bukan dialog bawaan browser)
+        document.addEventListener('submit', function (e) {
+            const form = e.target;
+            if (form.classList.contains('form-hapus')) {
+                e.preventDefault();
+                Swal.fire({
+                    title: 'Hapus data ini?',
+                    text: 'Data yang sudah dihapus tidak dapat dikembalikan.',
+                    icon: 'warning',
+                    showCancelButton: true,
+                    confirmButtonColor: '#d33',
+                    cancelButtonColor: '#6c757d',
+                    confirmButtonText: 'Ya, hapus',
+                    cancelButtonText: 'Batal'
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        form.submit();
+                    }
+                });
+            }
+        }, true);
+    </script>
 </body>
 </html>

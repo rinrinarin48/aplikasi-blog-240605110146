@@ -1,7 +1,7 @@
 # Aplikasi Blog — Sistem Manajemen Konten (CMS) + Halaman Pengunjung
 
-> **Nama Lengkap:** _Arinda Noer Agit_
-> **NIM:** _240605110146_
+> **Nama Lengkap:** _[ISI NAMA LENGKAP KAMU]_
+> **NIM:** _[ISI NIM KAMU]_
 > **Video Demonstrasi (YouTube):** _[ISI TAUTAN VIDEO YOUTUBE]_
 
 ## Deskripsi Singkat

@@ -1,0 +1,54 @@
+==================================================================
+ PAKET FINAL UAS - aplikasi-blog
+ (Modul 10 CMS + Halaman Pengunjung + README + .gitignore)
+==================================================================
+Project SAMA dengan Modul 10 (jangan buat project baru).
+
+ISI HALAMAN PENGUNJUNG (UAS):
+- app/Http/Controllers/PengunjungController.php   (controller publik, terpisah)
+- resources/views/layouts/pengunjung.blade.php    (layout publik, terpisah dari CMS)
+- resources/views/pengunjung/index.blade.php      (5 artikel terbaru + widget kategori)
+- resources/views/pengunjung/detail.blade.php     (detail + 5 artikel terkait)
+- routes/web.php  -> route publik (tanpa login):
+      /              -> halaman utama (beranda)
+      /artikel/{id}  -> detail artikel
+- README.md   (deliverable wajib: isi nama, NIM, link video)
+- .gitignore  (memastikan .env tidak ikut ter-upload ke GitHub)
+
+------------------------------------------------------------------
+CARA PASANG (timpa project lama uaslatihan)
+------------------------------------------------------------------
+1. Tutup "php artisan serve" (Ctrl+C).
+2. Extract isi ZIP ini ke ROOT project:  C:\laragon\www\uaslatihan
+   Saat ditanya -> "Replace the files in the destination".
+3. Terminal di folder project:
+       composer dump-autoload
+       php artisan storage:link
+       php artisan optimize:clear
+4. Pastikan .env: DB_DATABASE=db_blog, DB_CONNECTION=mysql,
+   SESSION_DRIVER=file, CACHE_STORE=file
+5. php artisan serve
+
+AKSES:
+- Pengunjung : http://localhost:8000/
+- Login CMS  : http://localhost:8000/login
+
+------------------------------------------------------------------
+SEBELUM REKAM VIDEO / SUBMIT (penting!)
+------------------------------------------------------------------
+1. Edit README.md -> isi NAMA, NIM, dan TAUTAN VIDEO YouTube.
+2. Pastikan gambar artikel & foto penulis muncul (storage:link + nama
+   file di database cocok dengan file di storage).
+3. Tambahkan DATA YANG CUKUP lewat CMS supaya demo lengkap:
+   - minimal 3-4 kategori
+   - beberapa artikel per kategori (agar filter kategori & widget
+     "Artikel Terkait" terlihat berfungsi di video).
+4. Soal menyebut tombol "Kelanjutannya", gambar Lampiran menulis
+   "Baca Selengkapnya". Paket ini memakai "Baca Selengkapnya"
+   (sesuai gambar Lampiran). Ganti di pengunjung/index.blade.php
+   bila dosen meminta teks lain.
+5. Upload ke GitHub publik, nama repo: aplikasi-blog-[NIM].
+   JANGAN upload file .env.
+
+JANGAN jalankan "php artisan migrate".
+==================================================================
