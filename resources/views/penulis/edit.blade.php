@@ -61,7 +61,7 @@
             </div>
             <div class="d-flex gap-2 justify-content-end">
                 <a href="{{ route('penulis.index') }}" class="btn btn-sm" style="background-color:#f0f0f0; color:#555;">Batal</a>
-                <button type="submit" class="btn btn-sm btn-success">Simpan Perubahan</button>
+                <button type="submit" class="btn btn-sm btn-primary">Simpan Perubahan</button>
             </div>
         </form>
     </div>

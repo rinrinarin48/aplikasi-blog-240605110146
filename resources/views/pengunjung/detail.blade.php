@@ -5,9 +5,9 @@
 @section('content')
 <!-- Breadcrumb -->
 <div class="mb-3" style="font-size:13px;">
-    <a href="{{ route('beranda') }}" style="color:#2e7d32; text-decoration:none;">Beranda</a>
+    <a href="{{ route('beranda') }}" style="color:#1d4ed8; text-decoration:none;">Beranda</a>
     <span style="color:#aaa;"> / </span>
-    <a href="{{ route('beranda', ['kategori' => $artikel->id_kategori]) }}" style="color:#2e7d32; text-decoration:none;">
+    <a href="{{ route('beranda', ['kategori' => $artikel->id_kategori]) }}" style="color:#1d4ed8; text-decoration:none;">
         {{ $artikel->kategori->nama_kategori }}
     </a>
     <span style="color:#aaa;"> / </span>
@@ -25,7 +25,8 @@
                 <h3 class="fw-bold mt-3 mb-3" style="color:#1f2d3d;">{{ $artikel->judul }}</h3>
 
                 <div class="d-flex align-items-center gap-2 mb-4">
-                    <span class="avatar-init">{{ strtoupper(substr($artikel->penulis->nama_depan, 0, 1)) }}</span>
+                    <img src="{{ asset('storage/foto/' . ($artikel->penulis->foto ?: 'default.png')) }}"
+                        alt="{{ $artikel->penulis->nama_depan }}" class="avatar-foto">
                     <div>
                         <div style="font-size:13px; font-weight:600; color:#1f2d3d;">
                             {{ $artikel->penulis->nama_depan }} {{ $artikel->penulis->nama_belakang }}
@@ -39,7 +40,7 @@
                 </div>
 
                 <hr class="my-4">
-                <a href="{{ route('beranda') }}" style="color:#2e7d32; text-decoration:none; font-size:13px;">
+                <a href="{{ route('beranda') }}" style="color:#1d4ed8; text-decoration:none; font-size:13px;">
                     &larr; Kembali ke Beranda
                 </a>
             </div>

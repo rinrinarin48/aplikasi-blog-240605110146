@@ -33,8 +33,8 @@
         }
         .nav-item:hover { background-color: #f4f4f9; color: #333333; }
         .nav-item.active {
-            background-color: #e8f5e9; color: #2e7d32;
-            border-left-color: #4CAF50; font-weight: 600;
+            background-color: #e8f0fe; color: #1d4ed8;
+            border-left-color: #2563eb; font-weight: 600;
         }
         .sidebar-bottom { padding: 12px 14px 0; border-top: 1px solid #f0f0f0; margin-top: auto; }
         .main-content { flex: 1; padding: 24px; }
@@ -75,6 +75,9 @@
             <a href="{{ route('kategori.index') }}"
                 class="nav-item {{ request()->routeIs('kategori.*') ? 'active' : '' }}">
                 Kelola Kategori
+            </a>
+            <a href="{{ route('beranda') }}" target="_blank" class="nav-item">
+                Lihat Halaman Pengunjung
             </a>
 
             <div class="sidebar-bottom mt-auto">

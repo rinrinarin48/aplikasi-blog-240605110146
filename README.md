@@ -1,58 +1,83 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Aplikasi Blog — Sistem Manajemen Konten (CMS) + Halaman Pengunjung
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+> **Nama Lengkap:** _Arinda Noer Agit_
+> **NIM:** _240605110146_
+> **Video Demonstrasi (YouTube):** _[ISI TAUTAN VIDEO YOUTUBE]_
 
-## About Laravel
+## Deskripsi Singkat
+Aplikasi blog berbasis **Laravel** yang terdiri dari dua bagian:
+1. **CMS / Halaman Administrator** (perlu login) untuk mengelola **artikel**, **penulis**, dan **kategori artikel**.
+2. **Halaman Pengunjung** (publik, tanpa login) untuk membaca artikel.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+Aplikasi memakai database **`db_blog`** dengan tabel `penulis`, `kategori_artikel`, dan `artikel`.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## Fitur
+### CMS (dilindungi login)
+- Login & logout penulis (autentikasi memakai tabel `penulis`).
+- CRUD **Kategori Artikel** (tambah, ubah, hapus).
+- CRUD **Penulis** (tambah, ubah, hapus, termasuk upload foto profil).
+- CRUD **Artikel** (tambah, ubah, hapus, termasuk upload gambar).
+- Validasi input dan notifikasi (flash message) untuk setiap operasi.
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+### Halaman Pengunjung (publik)
+- **Halaman Utama** (`/`): menampilkan **5 artikel terbaru** beserta **widget kategori** di samping. Pengunjung dapat **menyaring artikel berdasarkan kategori** dengan mengklik item di widget.
+- **Halaman Detail Artikel** (`/artikel/{id}`): menampilkan isi lengkap artikel beserta **5 artikel terkait** dari kategori yang sama, lengkap dengan breadcrumb dan tautan **Kembali ke Beranda**.
 
-## Learning Laravel
+## Teknologi
+- Laravel 13 (PHP 8.3)
+- MySQL (database `db_blog`)
+- Bootstrap 5
+- Blade Template Engine
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+## Struktur Penting
+- Controller pengunjung: `app/Http/Controllers/PengunjungController.php` (terpisah dari controller CMS).
+- Layout pengunjung: `resources/views/layouts/pengunjung.blade.php` (terpisah dari layout CMS `layouts/app.blade.php`).
+- Seluruh route didefinisikan di `routes/web.php`. Route pengunjung **tidak** memakai middleware `auth`.
 
-In addition, [Laracasts](https://laracasts.com) contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+## Cara Menjalankan Aplikasi Secara Lokal
+1. Clone repositori ini, lalu masuk ke foldernya:
+   ```
+   git clone <url-repo-ini>
+   cd aplikasi-blog
+   ```
+2. Install dependency:
+   ```
+   composer install
+   ```
+3. Siapkan file `.env`:
+   ```
+   copy .env.example .env
+   ```
+   Lalu sesuaikan bagian database & session:
+   ```
+   DB_CONNECTION=mysql
+   DB_HOST=127.0.0.1
+   DB_PORT=3306
+   DB_DATABASE=db_blog
+   DB_USERNAME=root
+   DB_PASSWORD=
 
-You can also watch bite-sized lessons with real-world projects on [Laravel Learn](https://laravel.com/learn), where you will be guided through building a Laravel application from scratch while learning PHP fundamentals.
+   SESSION_DRIVER=file
+   CACHE_STORE=file
+   ```
+4. Generate application key:
+   ```
+   php artisan key:generate
+   ```
+5. Import database `db_blog` (file `.sql`) ke MySQL melalui phpMyAdmin/HeidiSQL.
+6. Buat symbolic link storage (agar gambar tampil):
+   ```
+   php artisan storage:link
+   ```
+   Pastikan file gambar berada di `storage/app/public/foto/` (foto penulis) dan `storage/app/public/gambar/` (gambar artikel).
+7. Jalankan server:
+   ```
+   php artisan serve
+   ```
+8. Akses aplikasi:
+   - Halaman pengunjung: `http://localhost:8000/`
+   - Login admin/CMS: `http://localhost:8000/login`
 
-## Agentic Development
-
-Laravel's predictable structure and conventions make it ideal for AI coding agents like Claude Code, Cursor, and GitHub Copilot. Install [Laravel Boost](https://laravel.com/docs/ai) to supercharge your AI workflow:
-
-```bash
-composer require laravel/boost --dev
-
-php artisan boost:install
-```
-
-Boost provides your agent 15+ tools and skills that help agents build Laravel applications while following best practices.
-
-## Contributing
-
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+## Catatan
+- Database sudah berisi data. **Jangan** menjalankan `php artisan migrate` (struktur tabel tidak boleh diubah).
+- File `.env` tidak diikutkan ke repositori karena berisi kredensial (sudah diatur di `.gitignore`).

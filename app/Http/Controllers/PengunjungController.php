@@ -16,10 +16,12 @@ class PengunjungController extends Controller
         $query = Artikel::with('penulis', 'kategori')->orderBy('id', 'desc');
 
         if ($kategoriDipilih) {
-            $query->where('id_kategori', $kategoriDipilih);
+            // Kategori dipilih: tampilkan SEMUA artikel dalam kategori tersebut
+            $artikel = $query->where('id_kategori', $kategoriDipilih)->get();
+        } else {
+            // Halaman utama: hanya 5 artikel terbaru
+            $artikel = $query->take(5)->get();
         }
-
-        $artikel = $query->take(5)->get();
 
         $kategori = KategoriArtikel::withCount('artikel')
             ->orderBy('nama_kategori', 'asc')

@@ -5,7 +5,7 @@
 @section('content')
 <div class="d-flex justify-content-between align-items-center mb-3">
     <h6 class="fw-semibold mb-0" style="color:#333333;">Data Penulis</h6>
-    <a href="{{ route('penulis.create') }}" class="btn btn-sm btn-success">+ Tambah Penulis</a>
+    <a href="{{ route('penulis.create') }}" class="btn btn-sm btn-primary">+ Tambah Penulis</a>
 </div>
 
 <div class="card border-0 shadow-sm">

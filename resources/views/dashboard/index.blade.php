@@ -7,16 +7,16 @@
     <div class="card border-0 shadow-sm" style="max-width: 480px; width: 100%; border-radius: 12px;">
         <div class="card-body p-4 p-md-5 text-center">
             <div class="mb-4">
-                <div style="width:64px; height:64px; border-radius:50%; background-color:#e8f5e9;
+                <div style="width:64px; height:64px; border-radius:50%; background-color:#e8f0fe;
                     display:flex; align-items:center; justify-content:center; margin:0 auto 16px;">
                     <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="none"
-                        viewBox="0 0 24 24" stroke="#2e7d32" stroke-width="1.5">
+                        viewBox="0 0 24 24" stroke="#1d4ed8" stroke-width="1.5">
                         <path stroke-linecap="round" stroke-linejoin="round"
                             d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
                     </svg>
                 </div>
                 <h5 class="fw-semibold mb-1">
-                    Selamat datang, <span style="color:#2e7d32;">{{ $nama_lengkap }}</span>
+                    Selamat datang, <span style="color:#1d4ed8;">{{ $nama_lengkap }}</span>
                 </h5>
                 <p class="text-muted small mb-0">
                     Silakan pilih menu di sebelah kiri untuk mulai mengelola konten blog.

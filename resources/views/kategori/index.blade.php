@@ -5,7 +5,7 @@
 @section('content')
 <div class="d-flex justify-content-between align-items-center mb-3">
     <h6 class="fw-semibold mb-0" style="color:#333333;">Data Kategori Artikel</h6>
-    <a href="{{ route('kategori.create') }}" class="btn btn-sm btn-success">+ Tambah Kategori</a>
+    <a href="{{ route('kategori.create') }}" class="btn btn-sm btn-primary">+ Tambah Kategori</a>
 </div>
 
 <div class="card border-0 shadow-sm">

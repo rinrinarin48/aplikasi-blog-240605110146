@@ -30,7 +30,7 @@
             </div>
             <div class="d-flex gap-2 justify-content-end">
                 <a href="{{ route('kategori.index') }}" class="btn btn-sm" style="background-color:#f0f0f0; color:#555;">Batal</a>
-                <button type="submit" class="btn btn-sm btn-success">Simpan Data</button>
+                <button type="submit" class="btn btn-sm btn-primary">Simpan Data</button>
             </div>
         </form>
     </div>
