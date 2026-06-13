@@ -1,8 +1,8 @@
 # Aplikasi Blog — Sistem Manajemen Konten (CMS) + Halaman Pengunjung
 
-> **Nama Lengkap:** _[ISI NAMA LENGKAP KAMU]_
-> **NIM:** _[ISI NIM KAMU]_
-> **Video Demonstrasi (YouTube):** _[ISI TAUTAN VIDEO YOUTUBE]_
+> **Nama Lengkap:** _Arinda Noer Agit_
+> **NIM:** _240605110146_
+> **Video Demonstrasi (YouTube):** https://youtu.be/_47u6PionTQ?si=pEiSB3cxsKWB7Nvh
 
 ## Deskripsi Singkat
 Aplikasi blog berbasis **Laravel** yang terdiri dari dua bagian:
